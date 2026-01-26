@@ -1,5 +1,5 @@
 ## `Descrição do desafio`
-import email
+
 from typing import Annotated
 
 #criado ambiente virtual
@@ -50,5 +50,21 @@ def criar_usuario(nome: Annotated[str, Body()], email: Annotated[str, Body()], i
 
 
 @app.get("/usuario") #criando rota para definir usuario
-def usuario(): #criando função que será chamada no servidor
-    return [usuario.lista_usuario() for usuario in usuarios] #retornar usuario armazenado na lista
+def listar_usuario(): #criando função que será chamada no servidor
+    return usuarios
+
+@app.get("/usuario/{id}") #acessando id de usuario /inserir id no lugar de id
+def acessar_usuario(id: int): #criando função que será chamada ao acessar a rota - parâmetro: id como inteiro
+    for usuario in usuarios: #para cada usuario em usuarios execute o camdno abaixo
+        if usuario["id"] == id: #se usuario id recebido for igual ao id existente
+            return usuario #retorna os dados do usuario
+    raise HTTPException(status_code=400, detail="ID não encontrado, digite um ID válido.")
+
+
+@app.delete("/usuario/{id}")
+def deletar_usuario(id: int):
+    for usuario in usuarios:
+        if usuario["id"] == id:
+            usuarios.remove(usuario)
+            return "Usuário removido."
+    raise HTTPException(status_code=404, detail="Usuário não encontrado.")
