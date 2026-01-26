@@ -61,10 +61,10 @@ def acessar_usuario(id: int): #criando função que será chamada ao acessar a r
     raise HTTPException(status_code=400, detail="ID não encontrado, digite um ID válido.")
 
 
-@app.delete("/usuario/{id}")
-def deletar_usuario(id: int):
+@app.delete("/usuario/{id}") #deletando usuario - definindo rota
+def deletar_usuario(id: int): #função que será chamada - recebe numero inteiro como parametro
     for usuario in usuarios:
         if usuario["id"] == id:
-            usuarios.remove(usuario)
+            usuarios.remove(usuario) #remove usuario na lista de usuarios.
             return "Usuário removido."
     raise HTTPException(status_code=404, detail="Usuário não encontrado.")
