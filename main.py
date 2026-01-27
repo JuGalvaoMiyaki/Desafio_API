@@ -68,3 +68,17 @@ def deletar_usuario(id: int): #função que será chamada - recebe numero inteir
             usuarios.remove(usuario) #remove usuario na lista de usuarios.
             return "Usuário removido."
     raise HTTPException(status_code=404, detail="Usuário não encontrado.")
+
+@app.put("/usuario/{id}") #cria rota de atualização com ID do usuario
+def atualizar_usuario(nome: Annotated[str, Body()], email: Annotated[str, Body()], idade: Annotated[int, Body()], id: int): #passa esse id e os outros parametros para a função chamada na rota
+    for usuario in usuarios: #percorre a lista usuario reprensenta cada elemento da lista usuarios
+        email_existe = email_ja_existe(email, id_atual= id) #chamando função e atribuindo valor dos parametros na variavel email_existe
+        if usuario["id"] == id:
+            if email_existe:
+                raise HTTPException(status_code=400, detail="Email ja existente.")
+
+            usuario["nome"] = nome #atualizações
+            usuario["email"] = email
+            usuario["idade"] = idade
+            return usuario
+    raise HTTPException(status_code= 404, detail = "Usuario não encontrado.") #se não encontrar usuario retorna mensagem de erro
