@@ -56,7 +56,7 @@ def listar_usuario(): #criando função que será chamada no servidor
 
 @app.get("/usuario/{id}") #acessando id de usuario /inserir id no lugar de id
 def acessar_usuario(id: int): #criando função que será chamada ao acessar a rota - parâmetro: id como inteiro
-    for usuario in usuarios: #para cada usuario em usuarios execute o camdno abaixo
+    for usuario in usuarios: #para cada usuario em usuarios execute o campo abaixo
         if usuario["id"] == id: #se usuario id recebido for igual ao id existente
             return usuario #retorna os dados do usuario
     raise HTTPException(status_code=400, detail="ID não encontrado, digite um ID válido.")
