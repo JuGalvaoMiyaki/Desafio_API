@@ -37,6 +37,7 @@ def criar_usuario(nome: Annotated[str, Body()], email: Annotated[str, Body()], i
 
 
     novo_usuario = {
+
         "id": contador_id,
         "nome": nome,
         "email": email,
