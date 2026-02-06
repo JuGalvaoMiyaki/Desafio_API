@@ -29,7 +29,7 @@ Ele oferece rotas para criar, listar, acessar, atualizar e remover usuários em 
 O código é experimental e serve como material de estudo.
 
 
-## 🚀 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 1. Python 3.10+ 
 
@@ -39,18 +39,18 @@ O código é experimental e serve como material de estudo.
 
 
  
-# 📂 Estrutura do projeto
+# Estrutura do projeto
 
 |--main.py
-    |--README.md
-       |--requirements.txt
+|--README.md
+|--requirements.txt
 
 
-# ⚙️ Instalação 
+# Instalação 
 
 1. Clone o repositório 
 
-git clone https://github.com/JuGalvaoMiyaki/Docker_Primeira_API
+git clone https://github.com/JuGalvaoMiyaki/Desafio_API
 
 2. Crie um ambiente virtual (opcional, mas recomendado)
 
@@ -58,21 +58,19 @@ python -m venv venv                     # Para criar o ambiente virtual
 source venv/bin/activate   # Linux/Mac  # Para ativar o ambiente virtual
 venv\Scripts\activate      # Windows    #Para ativar o ambiente virtual
 
-
 3. Instale dependências:
 
 pip install -r requirements.txt
 
 
-## ⚙️ Execução
+## Execução
 
 Rode a aplicação com Uvicorn (modo de desenvolvimento com `--reload`):
 
 uvicorn main:app --reload 
 
 
-
-## 📌 Endpoints Disponíveis
+## Endpoints Disponíveis
 
 ## | Método | Rota                          
    |GET     |http://127.0.0.1:8000          
@@ -92,6 +90,7 @@ uvicorn main:app --reload
 - GET/usuario/{id}      Obtém dados do usuário por `id`.
 - PUT/usuario/{id}      Atualiza `nome`, `email` e `idade` do usuário.
 - DELETE/usuario/{id}   Remove o usuário com o `id` informado.
+
 
 # Exemplo:
 
@@ -146,7 +145,7 @@ uvicorn main:app --reload
 "Usuário removido."
 
 
-# 📌 Observações:
+# Observações:
 
 Para as rotas : 
 
@@ -186,7 +185,6 @@ Caso o usuário insira um email já utilizado por outro ID, retornará o erro 40
 
 ## Como contribuir
 
-- Abra uma issue descrevendo a sugestão ou bug.
 - Para mudanças pequenas: crie um fork, faça um branch, implemente e envie um pull request.
 - Se quiser que eu ajuste o README (traduzir, detalhar exemplos, adicionar imagens ou postes de rota), diga quais pontos quer que eu aprofunde, entre em contato. 
 
@@ -207,7 +205,8 @@ Permitido o uso para fins educacionais.
 #  Referências Técnicas
 
 Python: https://docs.python.org/pt-br/3/
-Flask:  https://flask.palletsprojects.com/en/stable/reqcontext/
+FastAPI:https://fastapi.tiangolo.com/pt/learn/
+Uvicorn: https://uvicorn.dev
 
 *Projeto de estudo com Python, FastAPI, Uvicorn*
 
