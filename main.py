@@ -25,7 +25,7 @@ def email_ja_existe(email:str, id_atual:int = None):
 
 @app.get("/") #cria uma rota no servidor e executa a função abaixo
 def mensagem(): #cria uma função chamada mensagem
-    return "Tudo okay por aqui" #que irá retornar a mensagem "Tudo ok por aqui"
+    return {"mensagem" : "Tudo okay por aqui"} #que irá retornar a mensagem
 
 @app.post("/usuario") #criando metodo post para receber dados
 def criar_usuario(nome: Annotated[str, Body()], email: Annotated[str, Body()], idade: Annotated[int, Body()]):
