@@ -54,13 +54,29 @@ O código é experimental e serve como material de estudo.
 git clone https://github.com/JuGalvaoMiyaki/Desafio_API
 ```
 
-2. Crie um ambiente virtual (opcional, mas recomendado):
+2. Verifique se o Python está instalado:
 
 ```bash
-python -m venv venv
+python3 --version
 ```
 
-3. Ative o ambiente virtual:
+Se aparecer "command not found", você precisa instalar o Python primeiro.
+
+https://www.python.org/downloads/
+
+3. Se python3 --version não funcionar, instale via Homebrew:
+
+```bash
+brew install python
+```
+
+4. Crie um ambiente virtual (opcional, mas recomendado):
+
+```bash
+python3 -m venv venv
+```
+
+5. Ative o ambiente virtual:
 
 ```bash
 Linux/Mac:
@@ -73,7 +89,7 @@ Windows:
 venv\Scripts\activate
 ```
 
-4. Instale dependências:
+6. Instale dependências:
 
 ```bash
 pip install -r requirements.txt
